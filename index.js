@@ -15,14 +15,31 @@ function errorMiddleware () {
 }
 app.use(errorMiddleware())
 
+/**
+ * @query {String} limit
+ * @query {String} page
+ * @query {String} pv -1 | 1
+ * @query {String} createTime -1 | 1
+ */
 app.use(route.get('/tools', async (ctx, next) => {
   ctx.body = tools
 }))
 
+/**
+ * @query {String} limit
+ * @query {String} page
+ * @query {String} createTime -1 | 1
+ * @query {String} loginTimes -1 | 1
+ */
 app.use(route.get('/users', async (ctx, next) => {
   ctx.body = 'users'
 }))
 
+/**
+ * @query {String} limit
+ * @query {String} page
+ * @query {String} createTime -1 | 1
+ */
 app.use(route.get('/suggest', async (ctx, next) => {
   ctx.body = 'suggest'
 }))
